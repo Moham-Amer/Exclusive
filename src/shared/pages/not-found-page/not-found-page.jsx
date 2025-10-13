@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { appRoutes } from "../../../routes";
 const containerStyle = {
   maxWidth: '1200px',
