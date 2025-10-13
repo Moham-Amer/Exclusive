@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": "0959",
+      "name": "mohammed",
+      "email": "mohammed@gmail.com",
+      "password": "mohammed"
+    },
+    {
+      "id": "cd63",
+      "name": "mohammed abdo",
+      "email": "abdo@gmail.com",
+      "password": "mohammed"
+    }
+  ],
+  "products": [
+    {
+      "id": "90fc",
+      "img": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 222,
+      "title": "second"
+    },
+    {
+      "id": "a10d",
+      "img": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 222,
+      "title": "Test"
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 3,
+      "title": "try react query 5",
+      "id": "8e2a"
+    },
+    {
+      "id": "58c3",
+      "img": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 22,
+      "title": "aa"
+    },
+    {
+      "id": "3412",
+      "img": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 222,
+      "title": "new 2"
+    },
+    {
+      "id": "2361",
+      "img": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 222,
+      "title": "new 3222"
+    }
+  ]
+}

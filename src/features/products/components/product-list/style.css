@@ -1,0 +1,8 @@
+.product-list-container {
+    padding: 15px 0px;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+}

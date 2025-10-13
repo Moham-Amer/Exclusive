@@ -1,0 +1,65 @@
+.sign-up-form-container {
+    margin: 0 auto 30px auto;
+    background: #fff;
+    max-width: 350px;
+    padding: 15px;
+    border-radius: 8px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.sign-up-form-container-header-title {
+    color: black;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-align: center;
+}
+.sign-up-form-container-control {
+    width: 100%;
+}
+.sign-up-form-container input {
+    width: 93%;
+    color: black;
+    border: 2px solid black;
+    outline: none;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+}
+.sign-up-form-container input::placeholder {
+    color: black;
+}
+.sign-up-form-container-button {
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+.sign-up-form-container-button:disabled {
+    cursor: not-allowed;
+}
+.login-image-section {
+  flex: 1 1 50%;
+  min-width: 500px;
+  background: #f6f6f6;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.login-image {
+  width: 90%;
+  max-width: 900px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* 🧠 Responsive rule: hide image on small screens */
+@media (max-width: 768px) {
+  .login-image-section {
+    display: none;
+  }
+}

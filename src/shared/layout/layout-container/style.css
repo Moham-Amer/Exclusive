@@ -1,0 +1,14 @@
+.app-continer {
+    padding: 5rem;
+    background-color: white;
+}
+
+.breadcrumb-container {
+    background-color: white;
+  /* margin: 0 auto; */
+  /* padding: 24px 32px; */
+  /* max-width: 1200px; */
+  width: 100%;
+ padding-left: 10%;
+ padding-top: 2%;
+}
