@@ -4,9 +4,7 @@ An e-commerce store I built as the final project of the Sanad Youth frontend cou
 
 **Live demo:** https://exclusive-tau-five.vercel.app
 
-<!-- Tip: take a screenshot of the home page, upload it to the repo root via "Add file > Upload files", then put this line here:
 ![Exclusive home page](./screenshot.png)
--->
 
 ## What it does
 
