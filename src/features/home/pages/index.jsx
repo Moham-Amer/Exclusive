@@ -343,7 +343,7 @@ function MusicExperienceBanner() {
         </Box>
         <Box sx={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center", zIndex: 2 }}>
           <img
-            src="../public/images/jbl.png"
+            src="/images/jbl.png"
             alt="JBL Speaker"
             style={{ width: "100%", maxWidth: 380, borderRadius: 16 }}
           />
@@ -547,7 +547,7 @@ function NewArrivalSection() {
           }}
         >
           <img
-            src="../public/images/playstation.png" // Replace with your PS5 image URL
+            src="/images/playstation.png" // Replace with your PS5 image URL
             alt="PlayStation 5"
             style={{
               position: "absolute",
@@ -788,7 +788,7 @@ function HomePage() {
                     <Box sx={{ width: 10, height: 10, borderRadius: "50%", bgcolor: "#fff" }} />
                   </Box>
                   <img
-                    src="../public/images/hero.png"
+                    src="/images/hero.png"
                     alt="iPhone 14"
                     style={{
                       position: "absolute",
@@ -897,7 +897,7 @@ function HomePage() {
               mb: 2,
             }}
           >
-            <img src="../public/images/truck.png" alt="Truck" style={{ width: 60, height: 60 }} />
+            <img src="/images/truck.png" alt="Truck" style={{ width: 60, height: 60 }} />
           </Box>
           <Typography fontWeight={700} fontSize={16} mb={0.5} color="#222">
             FREE AND FAST DELIVERY
@@ -920,7 +920,7 @@ function HomePage() {
               mb: 2,
             }}
           >
-            <img src="../public/images/headset.png" alt="Headset" style={{ width: 60, height: 60 }} />
+            <img src="/images/headset.png" alt="Headset" style={{ width: 60, height: 60 }} />
           </Box>
           <Typography fontWeight={700} fontSize={16} mb={0.5} color="#222">
             24/7 CUSTOMER SERVICE
@@ -944,7 +944,7 @@ function HomePage() {
             }}
           >
     
-                <img src="../public/images/money.png" alt="Money" style={{ width: 60, height: 60 }} />
+                <img src="/images/money.png" alt="Money" style={{ width: 60, height: 60 }} />
 
          
           </Box>

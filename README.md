@@ -1,95 +1,40 @@
-# Final React Project
+# Exclusive
 
-A modern React + Vite e-commerce app with products, cart, wishlist, auth, search, and responsive UI.
+An e-commerce store I built as the final project of the Sanad Youth frontend course (Aug–Oct 2025). It started as a small products dashboard exercise and grew into a full storefront with a catalog, cart, wishlist, and auth.
 
-## Setup
+**Live demo:** https://exclusive-tau-five.vercel.app
 
-- Prereqs: Node >= 16, Yarn
-- Install:
+<!-- Tip: take a screenshot of the home page, upload it to the repo root via "Add file > Upload files", then put this line here:
+![Exclusive home page](./screenshot.png)
+-->
+
+## What it does
+
+- Browse products with search suggestions and category filters — filters live in the URL (`?category=`), so filtered views are shareable links
+- Cart with quantities and a live count badge in the navbar, persisted in localStorage so it survives a refresh
+- Wishlist you can toggle from any product page, also persisted, with its own page and badge
+- Login/signup forms validated with Yup
+- Contact and billing forms reusing the same validation pattern
+- Mobile-friendly: the navbar collapses into a drawer with compact cart/wishlist actions
+
+## How it's built
+
+React 19 + Vite, organized feature-first — each feature (`products`, `cart`, `wishlist`, `auth`, `home`...) owns its own `pages/`, `components/`, `hooks/`, `services/`, and `store/`.
+
+- **TanStack React Query** for data fetching and caching — products come from the [escuelajs API](https://api.escuelajs.co) through a small Axios wrapper in `src/lib/axios`
+- **Zustand** for cart and wishlist state, with small localStorage helpers for persistence
+- **react-hook-form + Yup** for every form in the app
+- **MUI** components with custom styles on top, lazy-loaded routes per feature with `react-router-dom`
+
+## Run it locally
+
 ```bash
 yarn install
-```
-- Run dev server:
-```bash
 yarn dev
 ```
-- Mock API (if used in your environment):
-```bash
-yarn server
-```
-- Build/preview:
-```bash
-yarn build
-yarn preview
-```
 
-## Tech Decisions
+Other scripts: `yarn build` (production build), `yarn preview`, `yarn lint`, and `yarn server` if you want the optional local mock API.
 
-- Routing: `react-router-dom` with a single router provider. Pages lazy-loaded per feature. Route structure lives under `src/routes` and feature route files (e.g. `features/products/routes`).
-- Data fetching: `@tanstack/react-query` for caching, retries, and loading states. API via Axios wrapper (`src/lib/axios`).
-- State: Lightweight global state with Zustand for cart and wishlist; local component state where appropriate.
-- Forms + Validation: `react-hook-form` with `@hookform/resolvers/yup`. Schemas live next to pages (e.g. `features/contact/pages/config.js`, `features/cart/pages/config.js`).
-- UI: MUI components + custom styles. Mobile-first responsive adjustments in navbar and sections.
-- Persistence: `localStorage` for cart and wishlist via small helpers/hooks.
-- Organization: Feature-first folders (`features/{home,products,cart,search,wishlist,auth}`) with `components/`, `pages/`, `hooks/`, `services/`, and `store/` subfolders.
+## Honest notes
 
-## Key Features
-
-- Products: listing, details, search suggestions, related items from API
-- Cart: quantity support, persisted cart, unique-count badge in navbar
-- Wishlist: toggle on product details, persisted list, dynamic badge; wishlist page reflects stored items
-- Auth: login/signup forms with Yup validation (demo flow)
-- Contact + Billing: forms validated with Yup (same pattern as auth); post-submit CTA to return home
-- Category Filters: URL-based (`?category=`) applied from Home and in Products page with filter buttons
-- Navbar: desktop tabs; mobile shows hamburger for drawer + compact actions (cart, wishlist) and search
-
-## Known Limitations
-
-- API Source: Products use `https://api.escuelajs.co/api/v1/products` via Axios. If the API schema changes, some fields (e.g., `images`, `category.name`) may need adjustments.
-- Auth Flow: Simplified demo; no secure session handling or protected backend APIs.
-- Wishlist Server Sync: Stored locally only; no server persistence.
-- Accessibility: Basic semantics are present, but a full a11y audit has not been performed.
-- Tests: No automated tests included.
-
-## Project Structure (excerpt)
-
-```
-src/
-  features/
-    auth/
-    cart/
-      pages/
-      hooks/
-      store/
-    contact/
-      pages/
-    home/
-      pages/
-    products/
-      components/
-      pages/
-      services/
-    wishlist/
-      hooks/
-      pages/
-      store/
-  lib/
-    axios/
-    storage/
-  shared/
-    components/
-    layout/
-  routes/
-```
-
-## Scripts
-
-- `yarn dev` – start app
-- `yarn build` – build
-- `yarn preview` – preview build
-- `yarn server` – start mock API (if used)
-- `yarn lint` – run ESLint
-
-## Deployment
-
-Build with `yarn build` and deploy `dist/` to any static host.
+The auth flow is a demo (no real session handling on a backend), the wishlist only syncs locally, and there are no automated tests yet — those are the first things I'd add next. If the escuelajs API changes its schema, a couple of fields like `images` and `category.name` may need adjusting.

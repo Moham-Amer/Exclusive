@@ -89,7 +89,7 @@ export function SignUpForm() {
                     }}
                 >
                     <img
-                        src="../public/images/auth.png"
+                        src="/images/auth.png"
                         alt="Shopping"
                         style={{
                             width: "90%",
