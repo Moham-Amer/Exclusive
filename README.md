@@ -2,7 +2,7 @@
 
 An e-commerce store I built as the final project of the Sanad Youth frontend course (Aug–Oct 2025). It started as a small products dashboard exercise and grew into a full storefront with a catalog, cart, wishlist, and auth.
 
-**Live demo:** https://exclusive-tau-five.vercel.app
+**Live demo:** https://exclusive-shop-app.vercel.app
 
 ![Exclusive home page](./screenshot.png)
 
