@@ -17,5 +17,10 @@ export default defineConfig(({ mode }) => {
       port: Number(env.VITE_PORT || 3000),
       strictPort: true,
     },
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: './src/test/setup.js',
+    },
   }
 })
