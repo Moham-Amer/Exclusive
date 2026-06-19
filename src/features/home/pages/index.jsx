@@ -10,6 +10,8 @@ import { ProductsSection } from "../../products/components/products-section";
 import { useQuery } from "@tanstack/react-query";
 import ProductsService from "../../products/services/api";
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { toast } from "react-toastify";
+import { useWishlist } from "../../wishlist/hooks";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
@@ -21,6 +23,30 @@ import SmartphoneOutlinedIcon from "@mui/icons-material/SmartphoneOutlined";
 
 
 const supportedCategories = ["Electronics", "Furniture", "Shoes", "Miscellaneous", "Clothes"];
+
+// Reusable wishlist + view (quick-look) actions shown on each product card.
+function CardActionIcons({ product }) {
+  const navigate = useNavigate();
+  const { addToWishlist } = useWishlist();
+
+  const handleWishlist = () => {
+    addToWishlist(product);
+    toast.success(`${product.name} added to wishlist`);
+  };
+
+  const handleView = () => navigate(`/products/${product.id}`);
+
+  return (
+    <Box sx={{ position: "absolute", top: 12, right: 12, display: "flex", gap: 1 }}>
+      <IconButton size="small" aria-label="Add to wishlist" onClick={handleWishlist}>
+        <FavoriteBorderIcon fontSize="small" />
+      </IconButton>
+      <IconButton size="small" aria-label="View product" onClick={handleView}>
+        <VisibilityOutlinedIcon fontSize="small" />
+      </IconButton>
+    </Box>
+  );
+}
 
 function useAllProducts() {
   const { data = [], isLoading } = useQuery({
@@ -79,10 +105,7 @@ function MusicBannerTimer() {
 function BestSellingCard({ product }) {
   return (
     <Card sx={{ minWidth: 220, maxWidth: 240, borderRadius: 3, boxShadow: "0 2px 8px #eee", position: "relative" }}>
-      <Box sx={{ position: "absolute", top: 12, right: 12, display: "flex", gap: 1 }}>
-        <IconButton size="small"><FavoriteBorderIcon fontSize="small" /></IconButton>
-        <IconButton size="small"><VisibilityOutlinedIcon fontSize="small" /></IconButton>
-      </Box>
+      <CardActionIcons product={product} />
       <CardMedia
         component="img"
         image={product.img}
@@ -394,10 +417,7 @@ function FlashSaleCard({ product }) {
       <Box sx={{ position: "absolute", top: 12, left: 12 }}>
         <Chip label={`-${product.discount}%`} color="error" size="small" sx={{ fontWeight: 600 }} />
       </Box>
-      <Box sx={{ position: "absolute", top: 12, right: 12, display: "flex", gap: 1 }}>
-        <IconButton size="small"><FavoriteBorderIcon fontSize="small" /></IconButton>
-        <IconButton size="small"><VisibilityOutlinedIcon fontSize="small" /></IconButton>
-      </Box>
+      <CardActionIcons product={product} />
       <CardMedia
         component="img"
         image={product.img}
@@ -447,10 +467,7 @@ function ProductCard({ product }) {
         </Box>
       )}
       {/* Icons */}
-      <Box sx={{ position: "absolute", top: 12, right: 12, display: "flex", gap: 1 }}>
-        <IconButton size="small"><FavoriteBorderIcon fontSize="small" /></IconButton>
-        <IconButton size="small"><VisibilityOutlinedIcon fontSize="small" /></IconButton>
-      </Box>
+      <CardActionIcons product={product} />
       {/* Product Image */}
       <CardMedia
         component="img"
