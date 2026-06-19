@@ -64,7 +64,11 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
+  color: '#222',
+  '& .MuiInputBase-input::placeholder': {
+    color: '#666',
+    opacity: 1,
+  },
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -209,9 +213,9 @@ const tabNames = Object.keys(appRoutes);
     borderRadius: 0,
     padding: '8px 16px',
     margin: '0 4px',
-    fontWeight: activeTab === tabName ? 'bold' : 'normal',
+    fontWeight: activeTab === tabName ? 'bold' : 500,
     transition: 'border-bottom 0.2s',
-    fontSize: '1rem',
+    fontSize: '1.1rem',
   });
   
 console.log(products);
@@ -480,7 +484,7 @@ console.log(products);
               <Box sx={{ position: "relative", minWidth: 160, mr: 1 }}>
                 <Search>
                   <SearchIconWrapper>
-                    <SearchIcon sx={{ color: "#fff" }} />
+                    <SearchIcon sx={{ color: iconColor }} />
                   </SearchIconWrapper>
                   <StyledInputBase
                     placeholder="Search"

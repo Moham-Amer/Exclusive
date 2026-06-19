@@ -1,32 +1,34 @@
 import React from "react";
+import GroupsIcon from "@mui/icons-material/Groups";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import ReplayIcon from "@mui/icons-material/Replay";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const stats = [
   {
-    icon: (
-      <i className="fa fa-users" style={{ fontSize: 28 }}></i>
-    ),
+    icon: <GroupsIcon sx={{ fontSize: 32 }} />,
     value: "10.5k",
     label: "Sellers active our site",
   },
   {
-    icon: (
-      <i className="fa fa-dollar-sign" style={{ fontSize: 28 }}></i>
-    ),
+    icon: <AttachMoneyIcon sx={{ fontSize: 32 }} />,
     value: "33k",
     label: "Monthly Product Sale",
     highlight: true,
   },
   {
-    icon: (
-      <i className="fa fa-shopping-bag" style={{ fontSize: 28 }}></i>
-    ),
+    icon: <ShoppingBagOutlinedIcon sx={{ fontSize: 32 }} />,
     value: "45.5k",
     label: "Customer active in our site",
   },
   {
-    icon: (
-      <i className="fa fa-chart-line" style={{ fontSize: 28 }}></i>
-    ),
+    icon: <TrendingUpIcon sx={{ fontSize: 32 }} />,
     value: "25k",
     label: "Annual gross sale in our site",
   },
@@ -36,48 +38,48 @@ const team = [
   {
     name: "Tom Cruise",
     title: "Founder & Chairman",
-    img: "../../public/images/about-people/about-people-1.png",
+    img: "/images/about-people/about-people-1.png",
     socials: [
-      { icon: "fab fa-facebook-f", link: "#" },
-      { icon: "fab fa-twitter", link: "#" },
-      { icon: "fab fa-linkedin-in", link: "#" },
+      { icon: <FacebookIcon />, link: "#" },
+      { icon: <TwitterIcon />, link: "#" },
+      { icon: <LinkedInIcon />, link: "#" },
     ],
   },
   {
     name: "Emma Watson",
     title: "Managing Director",
-    img: "../../public/images/about-people/about-people-2.png",
+    img: "/images/about-people/about-people-2.png",
     socials: [
-      { icon: "fab fa-facebook-f", link: "#" },
-      { icon: "fab fa-twitter", link: "#" },
-      { icon: "fab fa-linkedin-in", link: "#" },
+      { icon: <FacebookIcon />, link: "#" },
+      { icon: <TwitterIcon />, link: "#" },
+      { icon: <LinkedInIcon />, link: "#" },
     ],
   },
   {
     name: "Will Smith",
     title: "Product Designer",
-    img: "../../public/images/about-people/about-people-3.png",
+    img: "/images/about-people/about-people-3.png",
     socials: [
-      { icon: "fab fa-facebook-f", link: "#" },
-      { icon: "fab fa-twitter", link: "#" },
-      { icon: "fab fa-linkedin-in", link: "#" },
+      { icon: <FacebookIcon />, link: "#" },
+      { icon: <TwitterIcon />, link: "#" },
+      { icon: <LinkedInIcon />, link: "#" },
     ],
   },
 ];
 
 const features = [
   {
-    icon: <i className="fa fa-truck" style={{ fontSize: 28 }}></i>,
+    icon: <LocalShippingOutlinedIcon sx={{ fontSize: 32 }} />,
     title: "FREE AND FAST DELIVERY",
     desc: "Free delivery for all orders over $140",
   },
   {
-    icon: <i className="fa fa-headset" style={{ fontSize: 28 }}></i>,
+    icon: <SupportAgentIcon sx={{ fontSize: 32 }} />,
     title: "24/7 CUSTOMER SERVICE",
     desc: "Friendly 24/7 customer support",
   },
   {
-    icon: <i className="fa fa-undo" style={{ fontSize: 28 }}></i>,
+    icon: <ReplayIcon sx={{ fontSize: 32 }} />,
     title: "MONEY BACK GUARANTEE",
     desc: "We return money within 30 days",
   },
@@ -106,10 +108,9 @@ export default function AboutPage() {
             />
           </div>
         </div>
-       
+
         <div style={{ display: "flex", gap: 24, marginTop: 48, justifyContent: "center", flexWrap: "wrap" }}>
           {stats.map((stat) => (
-            //  {stats.map((stat, idx) => (
             <div
               key={stat.label}
               style={{
@@ -130,12 +131,11 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-    
+
         <div style={{ marginTop: 56 }}>
           <div style={{ display: "flex", gap: 32, justifyContent: "center", flexWrap: "wrap" }}>
             {team.map((member) => (
-                //  {team.map((member, idx) => (
-              <div key={member.name} style={{color: "#000", background: "#fff", borderRadius: 12, boxShadow: "0 2px 12px rgba(0,0,0,0.06)", width: 240, textAlign: "center", padding: "0 0 24px 0" }}>
+              <div key={member.name} style={{ color: "#000", background: "#fff", borderRadius: 12, boxShadow: "0 2px 12px rgba(0,0,0,0.06)", width: 240, textAlign: "center", padding: "0 0 24px 0" }}>
                 <img
                   src={member.img}
                   alt={member.name}
@@ -151,15 +151,15 @@ export default function AboutPage() {
                 <div style={{ color: "#888", fontSize: 15, marginBottom: 10 }}>{member.title}</div>
                 <div style={{ display: "flex", justifyContent: "center", gap: 16 }}>
                   {member.socials.map((s, i) => (
-                    <a key={i} href={s.link} style={{ color: "#222", fontSize: 18 }}>
-                      <i className={s.icon}></i>
+                    <a key={i} href={s.link} style={{ color: "#222", display: "inline-flex" }}>
+                      {s.icon}
                     </a>
                   ))}
                 </div>
               </div>
             ))}
           </div>
-        
+
           <div style={{ display: "flex", justifyContent: "center", gap: 8, margin: "18px 0 0 0" }}>
             <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#DB4444", display: "inline-block" }}></span>
             <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ddd", display: "inline-block" }}></span>
@@ -167,10 +167,9 @@ export default function AboutPage() {
             <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ddd", display: "inline-block" }}></span>
           </div>
         </div>
-      
-        <div style={{ display: "flex", gap: 32, justifyContent: "center", marginTop: 56, flexWrap: "wrap" }}>
-          {/* {features.map((f, idx) => ( */}
-            {features.map((f) => (
+
+        <div style={{ display: "flex", gap: 32, justifyContent: "center", marginTop: 56, paddingBottom: 56, flexWrap: "wrap" }}>
+          {features.map((f) => (
             <div key={f.title} style={{ background: "#fff", borderRadius: 12, boxShadow: "0 2px 12px rgba(0,0,0,0.06)", minWidth: 260, textAlign: "center", padding: "32px 18px" }}>
               <div style={{ marginBottom: 16 }}>{f.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{f.title}</div>

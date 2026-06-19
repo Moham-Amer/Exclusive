@@ -126,6 +126,7 @@ export function LoginForm() {
                                 alignItems: "center",
                                 justifyContent: "space-between",
                                 marginTop: 8,
+                                marginBottom: 24,
                             }}
                         >
 
@@ -138,7 +139,7 @@ export function LoginForm() {
                                     color: "#fff",
                                     border: "none",
                                     borderRadius: 6,
-                                    padding: "12px 38px",
+                                    padding: "20px 38px",
                                     fontSize: 16,
                                     fontWeight: 500,
                                     cursor: "pointer",
@@ -159,6 +160,21 @@ export function LoginForm() {
                                 }}
                             >
                                 Forget Password?
+                            </a>
+                    
+                        </div>
+                                                   <div style={{ textAlign: "center", color: "#888", fontSize: 15 }}>
+                            Don't have an account?{" "}
+                            <a
+                                href="/sign-up"
+                                style={{
+                                    color: "#222",
+                                    textDecoration: "underline",
+                                    marginLeft: 4,
+                                    fontWeight: 500,
+                                }}
+                            >
+                                Sign up
                             </a>
                         </div>
                     </form>

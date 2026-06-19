@@ -1,12 +1,10 @@
-import { Navigate } from "react-router";
+import { useLocation, Navigate } from "react-router-dom";
 
-const user = {
-    isAuth: true,
-}
 export function UserProductGuard({ children }) {
-    if (user.isAuth) {
-        return <>{children}</>
+    const location = useLocation();
+    if (localStorage.getItem('access_token')) {
+        return <>{children}</>;
     }
 
-    return <Navigate to='/login' replace />;
+    return <Navigate to="/login" state={{ from: location }} replace />;
 }

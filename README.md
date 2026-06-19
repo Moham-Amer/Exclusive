@@ -35,4 +35,4 @@ Other scripts: `yarn build` (production build), `yarn preview`, `yarn lint`, and
 
 ## Honest notes
 
-The auth flow is a demo (no real session handling on a backend), the wishlist only syncs locally, and there are no automated tests yet — those are the first things I'd add next. If the escuelajs API changes its schema, a couple of fields like `images` and `category.name` may need adjusting.
+The auth flow is a demo (no real session handling on a backend) and the wishlist only syncs locally. I've added **Vitest** and **React Testing Library** with unit and component tests (`yarn test`) and would expand coverage next. If the escuelajs API changes its schema, a couple of fields like `images` and `category.name` may need adjusting.
