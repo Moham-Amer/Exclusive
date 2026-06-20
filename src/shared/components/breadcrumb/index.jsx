@@ -32,15 +32,20 @@ export function Breadcrumb() {
       <Breadcrumbs aria-label="breadcrumb" sx={{ color: '#000', backgroundColor: '#ffff' ,fontSize: '16px', fontWeight: 500}}>
         {crumbs.map((crumb, index) => {
           const isLast = index === crumbs.length - 1;
+          const crumbSx = {
+            fontSize: '14px',
+            fontWeight: 500,
+            fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
+          };
           return isLast ? (
-            <Typography key={crumb.to} sx={{ color: 'text.primary' }}>{crumb.name}</Typography>
+            <Typography key={crumb.to} sx={{ ...crumbSx, color: '#222' }}>{crumb.name}</Typography>
           ) : (
             <Link
               key={crumb.to}
               component={RouterLink}
               underline="hover"
-              color="inherit"
               to={crumb.to}
+              sx={{ ...crumbSx, color: '#666' }}
             >
               {crumb.name}
             </Link>

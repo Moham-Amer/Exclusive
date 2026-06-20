@@ -38,3 +38,28 @@
 .sign-up-form-container-button:disabled {
     cursor: not-allowed;
 }
+
+/* Image section — matches the login page's responsive behaviour */
+.signup-image-section {
+    flex: 1 1 50%;
+    min-width: 350px;
+    background: #f6f6f6;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0;
+}
+.signup-image {
+    width: 90%;
+    max-width: 450px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+/* Hide the image on small screens, like the login page */
+@media (max-width: 768px) {
+    .signup-image-section {
+        display: none;
+    }
+}

@@ -75,28 +75,11 @@ export function SignUpForm() {
                 }}
             >
                 {/* Image Section */}
-                <div
-                    style={{
-                        flex: "1 1 50%",
-                        minWidth: 350,
-                        background: "#f6f6f6",
-                        borderTopLeftRadius: 10,
-                        borderBottomLeftRadius: 10,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        padding: "32px 0",
-                    }}
-                >
+                <div className="signup-image-section">
                     <img
                         src="/images/auth.png"
                         alt="Shopping"
-                        style={{
-                            width: "90%",
-                            maxWidth: 450,
-                            borderRadius: 8,
-                            objectFit: "cover",
-                        }}
+                        className="signup-image"
                     />
                 </div>
                 {/* Signup Form Section */}
