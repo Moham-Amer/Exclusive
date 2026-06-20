@@ -33,7 +33,7 @@ import { useWishlist } from '../../../features/wishlist/hooks';
 import ProductsService from '../../../features/products/services/api';
 import { useQuery } from "@tanstack/react-query";
 import { toast } from 'react-toastify';
-
+import { useQueryClient } from '@tanstack/react-query';
 
 
 
@@ -81,9 +81,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const isLoggedIn = Boolean(localStorage.getItem('access_token')); 
-
 export function PrimarySearchAppBar() {
+  const isLoggedIn = Boolean(localStorage.getItem('access_token'));
   const { data: products = [] } = useQuery({
         queryKey: ['products'],
         queryFn: async () => await ProductsService.getAll(),
@@ -98,6 +97,7 @@ export function PrimarySearchAppBar() {
   const [profileActive, setProfileActive] = useState(false);
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
+  const queryClient = useQueryClient();
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -115,6 +115,13 @@ export function PrimarySearchAppBar() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('id');
+    queryClient.clear();
+    window.location.href = '/login';
   };
 
   // Mobile overflow menu (currently not used; we rely on drawer)
@@ -200,7 +207,9 @@ export function PrimarySearchAppBar() {
   const iconColor = "#000";  
 
 
-const tabNames = Object.keys(appRoutes); 
+const tabNames = Object.keys(appRoutes).filter(
+   (tab) => !(isLoggedIn && (tab === 'Login' || tab === 'Sign Up'))
+ );
  const buttonStyle = (tabName) => ({
     color: 'black',
     background: 'none',
@@ -450,13 +459,7 @@ console.log(products);
                     <StarBorderIcon sx={{ mr: 2 }} />
                     My Reviews
                   </MenuItem>
-                  <MenuItem onClick={() => {
-                    toast.info('Logged out successfully');
-                    handleProfileClose(); 
-                    // localStorage.removeItem('access_token');
-                    localStorage.clear();
-                    window.location.reload();
-                   }}>
+                  <MenuItem onClick={() => { handleProfileClose(); handleLogout(); }}>
                     <LogoutIcon sx={{ mr: 2 }} />
                     Logout
                   </MenuItem>

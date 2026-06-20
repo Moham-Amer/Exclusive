@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { FormInput } from '../../../../shared/components/forms/form-input';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { signUpFormSchemaValidation } from './config';
-import { useLoginMutation } from '../../services/mutations';
+import { useSignUpMutation } from '../../services/mutations';
 import './style.css';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -11,45 +11,45 @@ import omit from 'lodash/omit';
 import { userStorage } from '../../storage';
 
 export function SignUpForm() {
-        const { register, formState: { errors }, handleSubmit } = useForm({
-            resolver: yupResolver(signUpFormSchemaValidation)
-        });
-        const { mutateAsync: login, isPending } = useLoginMutation()
-        const navigate = useNavigate();
+       // const { register, formState: { errors }, handleSubmit } = useForm({
+       //     resolver: yupResolver(signUpFormSchemaValidation)
+       // });
+       // const { mutateAsync: login, isPending } = useLoginMutation()
+       // const navigate = useNavigate();
     
-        const onSubmitHandler = handleSubmit(async values => {
-            try {
-                const response = await login(omit(values))
-                // console.log(response)
-                userStorage.set(response.id);
-                localStorage.setItem('access_token', response.access_token)
-                console.log(userStorage.get());
-                toast.success('Login successfully');
-                navigate(appRoutes.Home)
-                window.location.reload();
-            } catch (e) {
-                console.log(e);
-                toast.error('Failed to Login');
-            }
-        })
+        // const onSubmitHandler = handleSubmit(async values => {
+        //     try {
+        //         const response = await login(omit(values))
+        //         // console.log(response)
+        //         userStorage.set(response.id);
+        //         localStorage.setItem('access_token', response.access_token)
+        //         console.log(userStorage.get());
+        //         toast.success('Login successfully');
+        //         navigate(appRoutes.Home)
+        //         window.location.reload();
+        //     } catch (e) {
+        //         console.log(e);
+        //         toast.error('Failed to Login');
+        //     }
+        // })
     
-    // const { register, formState: { errors }, handleSubmit } = useForm({
-    //     resolver: yupResolver(signUpFormSchemaValidation)
-    // });
-    // const { mutateAsync: signUp, isPending } = useSignUpMutation()
-    // const navigate = useNavigate();
+     const { register, formState: { errors }, handleSubmit } = useForm({
+         resolver: yupResolver(signUpFormSchemaValidation)
+     });
+    const { mutateAsync: signUp, isPending } = useSignUpMutation()
+    const navigate = useNavigate();
 
-    // const onSubmitHandler = handleSubmit(async values => {
-    //     try {
-    //         const response = await signUp(omit(values))
-    //         userStorage.set(response.id);
-    //         toast.success('Sign up successfully');
-    //         navigate(appRoutes.home)
-    //     } catch (e) {
-    //         console.log(e);
-    //         toast.error('Failed to sign up');
-    //     }
-    // })
+    const onSubmitHandler = handleSubmit(async values => {
+        try {
+            const response = await signUp({ ...values, avatar: 'https://i.pravatar.cc/150' })
+            userStorage.set(response.id);
+            toast.success('Sign up successfully');
+            navigate(appRoutes.Login)
+        } catch (e) {
+            console.log(e);
+            toast.error('Failed to sign up');
+        }
+    })
 
     return (
         <div
