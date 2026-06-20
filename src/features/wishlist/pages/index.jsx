@@ -1,6 +1,7 @@
 import React from "react";
 import { useWishlist } from '../hooks';
 import { onImageError } from '../../../shared/lib/image-fallback';
+import { useCart } from '../../cart/hooks/cart';
 import { Loader } from '../../../shared/components/loader';
 import {
   Box,
@@ -59,6 +60,7 @@ const justForYou = [
 ];
 
 function WishlistCard({ product }) {
+  const { addToCart } = useCart();
   return (
     <Card
       sx={{
@@ -109,6 +111,7 @@ function WishlistCard({ product }) {
           "&:hover": { background: "#222" },
         }}
         startIcon={<ShoppingCartOutlinedIcon />}
+        onClick={() => addToCart({ id: product.id, title: product.name, price: product.price, img: product.img })}
       >
         Add To Cart
       </Button>
@@ -135,6 +138,7 @@ function WishlistCard({ product }) {
 }
 
 function JustForYouCard({ product }) {
+  const { addToCart } = useCart();
   return (
     <Card
       sx={{
@@ -195,6 +199,7 @@ function JustForYouCard({ product }) {
           "&:hover": { background: "#222" },
         }}
         startIcon={<ShoppingCartOutlinedIcon />}
+        onClick={() => addToCart({ id: product.id, title: product.name, price: product.price, img: product.img })}
       >
         Add To Cart
       </Button>

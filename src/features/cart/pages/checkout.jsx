@@ -32,6 +32,8 @@ export default function CheckoutPage() {
   const {
       cartList,
       loadCart,
+      setCartList,
+      saveCartToLocalStorage,
     } = useCart();
   
     useEffect(() => {
@@ -78,9 +80,11 @@ export default function CheckoutPage() {
 
 
   const onSubmitBilling = handleSubmit(() => {
-    navigate('/');
+    setCartList([]);
+    saveCartToLocalStorage([]);
     setShowCta(true);
     toast.success('Order placed successfully!');
+    navigate('/');
   });
 
   return (
