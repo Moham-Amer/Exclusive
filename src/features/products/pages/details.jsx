@@ -21,6 +21,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from "@tanstack/react-query";
 import ProductsService from '../../products/services/api';
 import { Loader } from "../../../shared/components/loader";
+import { onImageError } from "../../../shared/lib/image-fallback";
 
 
 
@@ -58,6 +59,7 @@ function RelatedCard({ product }) {
         <img
           src={product.img}
           alt={product.name}
+          onError={onImageError}
           style={{ height: 100, objectFit: "contain" }}
         />
       </Box>
@@ -211,6 +213,7 @@ export default function ProductDetailPage() {
                 <img
                   src={img}
                   alt={`thumb-${idx}`}
+                  onError={onImageError}
                   style={{ width: "100%", height: "100%", objectFit: "contain" }}
                 />
               </Box>
@@ -234,6 +237,7 @@ export default function ProductDetailPage() {
               src={productImages[0] || "/images/hero-img.jpg"}
               // src={productImages[selectedImg]}
               alt="main"
+              onError={onImageError}
               style={{ maxHeight: 320, maxWidth: "100%", objectFit: "contain" }}
             />
           </Box>

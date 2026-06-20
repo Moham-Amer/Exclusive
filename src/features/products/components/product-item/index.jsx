@@ -1,6 +1,7 @@
 import { useCart } from '../../../cart/hooks/cart';
 import { useNavigate } from 'react-router-dom';
 import './style.css';
+import { onImageError } from '../../../../shared/lib/image-fallback';
 
 export function ProductItem({
     title,
@@ -22,7 +23,7 @@ export function ProductItem({
 
     return (
         <div className="product-container" onClick={() => navigate(`/products/${id}`) }>
-            <img className="product-container-img" src={img} alt={title} />
+            <img className="product-container-img" src={img} alt={title} onError={onImageError} />
             <p className="product-container-title">
                 {title}
             </p>

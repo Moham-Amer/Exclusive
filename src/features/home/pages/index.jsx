@@ -12,6 +12,7 @@ import ProductsService from "../../products/services/api";
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { toast } from "react-toastify";
 import { useWishlist } from "../../wishlist/hooks";
+import { onImageError } from "../../../shared/lib/image-fallback";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
@@ -110,6 +111,7 @@ function BestSellingCard({ product }) {
         component="img"
         image={product.img}
         alt={product.name}
+        onError={onImageError}
         sx={{ height: 140, objectFit: "contain", mt: 4 }}
       />
       <CardContent sx={{ pt: 1 }}>
@@ -422,6 +424,7 @@ function FlashSaleCard({ product }) {
         component="img"
         image={product.img}
         alt={product.name}
+        onError={onImageError}
         sx={{ height: 140, objectFit: "contain", mt: 4 }}
       />
       <CardContent sx={{ pt: 1 }}>
@@ -473,6 +476,7 @@ function ProductCard({ product }) {
         component="img"
         image={product.img}
         alt={product.name}
+        onError={onImageError}
         sx={{ height: 140, objectFit: "contain", mt: 4 }}
       />
       {/* Add To Cart Button */}

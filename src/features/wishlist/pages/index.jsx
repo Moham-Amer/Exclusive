@@ -1,5 +1,6 @@
 import React from "react";
 import { useWishlist } from '../hooks';
+import { onImageError } from '../../../shared/lib/image-fallback';
 import { Loader } from '../../../shared/components/loader';
 import {
   Box,
@@ -91,6 +92,7 @@ function WishlistCard({ product }) {
         component="img"
         image={product.img}
         alt={product.name}
+        onError={onImageError}
         sx={{ height: 140, objectFit: "contain", mt: 4 }}
       />
       {/* Add To Cart Button */}
@@ -176,6 +178,7 @@ function JustForYouCard({ product }) {
         component="img"
         image={product.img}
         alt={product.name}
+        onError={onImageError}
         sx={{ height: 140, objectFit: "contain", mt: 4 }}
       />
       {/* Add To Cart Button */}
