@@ -9,6 +9,7 @@ import { aboutRoutes } from "../features/about/routes";
 import { productsRoutes } from "../features/products/routes";
 import { cartRoutes } from "../features/cart/routes";
 import { wishlistRoutes } from "../features/wishlist/routes";
+import { ErrorPage } from "../shared/pages/error-page";
 
 const NotFoundPage = lazy(() => import('../shared/pages/not-found-page/not-found-page'))
 
@@ -29,6 +30,7 @@ const routes = [
     {
         path: '/',
         element: <Outlet />,
+        errorElement: <ErrorPage />,
         children: [
             ...homeRoutes,
             ...contactRoutes,

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './style.css';
-import {Visbility, VisbilityOff} from '@mui/icons-material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 export function FormInput({ errorMessage, type = 'text',...inputProps }) {
     const [isPasswordInput, setIsPasswordInput] = useState(type === 'password');
