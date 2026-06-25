@@ -32,7 +32,7 @@ import { useCart } from '../../../features/cart/hooks/cart';
 import { useWishlist } from '../../../features/wishlist/hooks';
 import ProductsService from '../../../features/products/services/api';
 import { useQuery } from "@tanstack/react-query";
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import { useQueryClient } from '@tanstack/react-query';
 
 

@@ -7,7 +7,7 @@ import './style.css';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { appRoutes } from '../../../../routes'
-import omit from 'lodash/omit';
+// import omit from 'lodash/omit';
 import { userStorage } from '../../storage';
 
 export function SignUpForm() {

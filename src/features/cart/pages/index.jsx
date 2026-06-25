@@ -3,6 +3,7 @@ import { Box, Typography, Button, IconButton, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useCart } from '../hooks/cart';
 import CloseIcon from "@mui/icons-material/Close";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -33,9 +34,13 @@ export default function CartPage() {
 
   if (!cartList || cartList.length === 0) {
     return (
-      <Box sx={{ background: "#fff", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-        <Typography fontWeight={600} fontSize={24} color="#222" mb={3}>
-          No items added
+      <Box sx={{ background: "#fff", minHeight: "55vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", py: 8 }}>
+        <ShoppingCartOutlinedIcon sx={{ fontSize: 72, color: "#e0e0e0", mb: 2 }} />
+        <Typography fontWeight={600} fontSize={24} color="#222" mb={1}>
+          Your cart is empty
+        </Typography>
+        <Typography fontSize={15} color="#777" mb={3}>
+          Looks like you haven&apos;t added anything yet.
         </Typography>
         <Button
           variant="contained"
