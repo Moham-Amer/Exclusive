@@ -105,7 +105,7 @@ function MusicBannerTimer() {
 
 function BestSellingCard({ product }) {
   return (
-    <Card sx={{ minWidth: 220, maxWidth: 240, borderRadius: 3, boxShadow: "0 2px 8px #eee", position: "relative" }}>
+    <Card sx={{ minWidth: 220, maxWidth: 240, borderRadius: 3, boxShadow: "0 2px 8px #eee", position: "relative", transition: "transform 0.2s ease, box-shadow 0.2s ease", "&:hover": { transform: "translateY(-4px)", boxShadow: "0 6px 20px rgba(0,0,0,0.1)" } }}>
       <CardActionIcons product={product} />
       <CardMedia
         component="img"
@@ -415,7 +415,7 @@ function FlashSaleTimer() {
 
 function FlashSaleCard({ product }) {
   return (
-    <Card sx={{ minWidth: 220, maxWidth: 240, borderRadius: 3, boxShadow: "0 2px 8px #eee", position: "relative" }}>
+    <Card sx={{ minWidth: 220, maxWidth: 240, borderRadius: 3, boxShadow: "0 2px 8px #eee", position: "relative", transition: "transform 0.2s ease, box-shadow 0.2s ease", "&:hover": { transform: "translateY(-4px)", boxShadow: "0 6px 20px rgba(0,0,0,0.1)" } }}>
       <Box sx={{ position: "absolute", top: 12, left: 12 }}>
         <Chip label={`-${product.discount}%`} color="error" size="small" sx={{ fontWeight: 600 }} />
       </Box>
@@ -462,7 +462,7 @@ function FlashSaleCard({ product }) {
 
 function ProductCard({ product }) {
   return (
-    <Card sx={{ minWidth: 220, maxWidth: 240, borderRadius: 3, boxShadow: "0 2px 8px #eee", position: "relative", mb: 3 }}>
+    <Card sx={{ minWidth: 220, maxWidth: 240, borderRadius: 3, boxShadow: "0 2px 8px #eee", position: "relative", mb: 3, transition: "transform 0.2s ease, box-shadow 0.2s ease", "&:hover": { transform: "translateY(-4px)", boxShadow: "0 6px 20px rgba(0,0,0,0.1)" } }}>
       {/* New Chip */}
       {product.isNew && (
         <Box sx={{ position: "absolute", top: 12, left: 12 }}>

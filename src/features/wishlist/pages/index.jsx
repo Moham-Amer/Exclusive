@@ -24,7 +24,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 const justForYou = [
   {
     id: 5,
-    img: "https://static-01.daraz.com.bd/p/7.jpg",
+    img: "https://picsum.photos/seed/laptop/300/300",
     name: "ASUS FHD Gaming Laptop",
     price: 960,
     oldPrice: 1160,
@@ -34,7 +34,7 @@ const justForYou = [
   },
   {
     id: 6,
-    img: "https://static-01.daraz.com.bd/p/8.jpg",
+    img: "https://picsum.photos/seed/monitor/300/300",
     name: "IPS LCD Gaming Monitor",
     price: 1160,
     rating: 5,
@@ -42,7 +42,7 @@ const justForYou = [
   },
   {
     id: 7,
-    img: "https://static-01.daraz.com.bd/p/6b7e2a7f7e6e2c1e1b3e8e3e8e3e8e3e.jpg",
+    img: "https://picsum.photos/seed/gamepad/300/300",
     name: "HAVIT HV-G92 Gamepad",
     price: 560,
     isNew: true,
@@ -51,7 +51,7 @@ const justForYou = [
   },
   {
     id: 8,
-    img: "https://static-01.daraz.com.bd/p/2c1e1b3e8e3e8e3e8e3e8e3e8e3e8e3e.jpg",
+    img: "https://picsum.photos/seed/keyboard/300/300",
     name: "AK-900 Wired Keyboard",
     price: 200,
     rating: 5,
